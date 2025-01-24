@@ -1,0 +1,136 @@
+// MyNorthstar Patient Portal — Prisma Schema
+// PostgreSQL 15, hosted on AWS RDS (us-east-1)
+// All datetimes stored in UTC (ADR-004)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Patient {
+  id                  String        @id @default(cuid())
+  email               String        @unique
+  passwordHash        String
+  firstName           String
+  lastName            String
+  dateOfBirth         DateTime
+  emailVerified       Boolean       @default(false)
+  lastLoginAt         DateTime?
+  failedLoginAttempts Int           @default(0)
+  lockedUntil         DateTime?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  sessions            RefreshToken[]
+  appointments        Appointment[]
+  messages            Message[]
+  labResults          LabResult[]
+  auditLogs           AuditLog[]
+}
+
+model RefreshToken {
+  id         String   @id @default(cuid())
+  patientId  String
+  token      String   @unique
+  expiresAt  DateTime
+  rotatedAt  DateTime?
+  createdAt  DateTime @default(now())
+
+  patient    Patient  @relation(fields: [patientId], references: [id], onDelete: Cascade)
+}
+
+// IANA timezone string stored per clinic — required because AMD does not include
+// timezone metadata on appointment responses (ADR-004).
+// DFW clinics: America/Chicago | El Paso clinic: America/Denver
+model Clinic {
+  id           String        @id @default(cuid())
+  name         String
+  location     String
+  timezone     String        // IANA string e.g. "America/Chicago" or "America/Denver"
+  createdAt    DateTime      @default(now())
+
+  appointments Appointment[]
+}
+
+model Appointment {
+  id             String   @id @default(cuid())
+  patientId      String
+  providerId     String
+  clinicId       String
+  advancedMdId   String?  // AMD's own appointment ID for cancellation/reschedule calls
+  startsAtUtc    DateTime // UTC — convert to clinic local at display time (ADR-004)
+  durationMinutes Int     @default(30)
+  status         String   @default("confirmed") // confirmed | cancelled | rescheduled
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  patient        Patient  @relation(fields: [patientId], references: [id])
+  clinic         Clinic   @relation(fields: [clinicId], references: [id])
+}
+
+// Messages are encrypted at rest using AES-256-GCM (ADR-003).
+// bodyEncrypted and bodyIv are stored as bytea.
+// IV is per-message and required for decryption — do not reuse IVs.
+model Message {
+  id             String    @id @default(cuid())
+  patientId      String
+  providerId     String
+  subject        String
+  bodyEncrypted  Bytes     // AES-256-GCM ciphertext
+  bodyIv         Bytes     // 12-byte GCM IV — unique per message
+  bodyAuthTag    Bytes     // 16-byte GCM auth tag
+  direction      String    // "patient_to_provider" | "provider_to_patient"
+  readAt         DateTime?
+  createdAt      DateTime  @default(now())
+
+  patient        Patient   @relation(fields: [patientId], references: [id])
+}
+
+// Lab results pulled from AMD via 15-minute polling cron (MNS-2025-061).
+// Unique constraint on (patientId, advancedMdResultId) prevents duplicate inserts
+// when AMD returns the same result on consecutive polls (PR #103).
+// data_received_at added in PR #111 for 7-year HIPAA retention policy documentation.
+model LabResult {
+  id                String    @id @default(cuid())
+  patientId         String
+  advancedMdResultId String   // AMD's stable result identifier
+  resultType        String
+  releasedAt        DateTime
+  viewedAt          DateTime? // set on first patient access (idempotent)
+  notifiedAt        DateTime? // set after notification email dispatched
+  dataReceivedAt    DateTime  @default(now()) // used for retention tracking (PR #111)
+  createdAt         DateTime  @default(now())
+
+  patient           Patient   @relation(fields: [patientId], references: [id])
+
+  @@unique([patientId, advancedMdResultId])
+}
+
+// HIPAA audit log for PHI access events.
+// Records message access, lab result access, and profile updates.
+// No PHI values stored in this table — identifiers only.
+model AuditLog {
+  id           String   @id @default(cuid())
+  patientId    String
+  action       String   // e.g. "message_access" | "lab_result_access" | "profile_update"
+  resourceType String   // e.g. "message_thread" | "lab_result" | "patient_profile"
+  resourceId   String?
+  ipAddress    String?
+  createdAt    DateTime @default(now())
+
+  patient      Patient  @relation(fields: [patientId], references: [id])
+}
+
+// AMD OAuth token storage. Managed by token-refresh.service.ts cron job.
+// Single row in production — token refreshed every 23 hours (ADR-005).
+model AMDToken {
+  id               String   @id @default(cuid())
+  accessToken      String
+  expiresAt        DateTime
+  lastRefreshedAt  DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
