@@ -5,3 +5,5 @@ const RegisterForm: React.FC = () => {
 };
 
 export default RegisterForm;
+
+// fix: add live password strength indicator to registration fo
