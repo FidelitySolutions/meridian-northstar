@@ -10,3 +10,5 @@ export {};
 // feat: implement post /api/auth/refresh with token rotation a
 
 // feat: implement password reset request and confirm flow with
+
+// feat: complete account lockout with atomic postgresql update
