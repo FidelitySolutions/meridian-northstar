@@ -14,3 +14,5 @@ export {};
 // feat: complete account lockout with atomic postgresql update
 
 // fix: switch password reset token generation from standard ba
+
+// fix: invalidate all sessions for patient on password reset n
