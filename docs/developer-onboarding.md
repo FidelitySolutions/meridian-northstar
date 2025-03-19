@@ -5,3 +5,7 @@ docs: write adr-001 tech stack selection and adr-002 jwt session management with
 ## docs: write developer onboarding guide covering node postgre
 
 Update placeholder.
+
+## docs: write adr-004 appointment timezone handling utc storag
+
+Update placeholder.
