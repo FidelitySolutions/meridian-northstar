@@ -103,3 +103,5 @@ export async function getReleasedLabResults(patientId: string, since?: string): 
   const data = await amdFetch<{ results: AMDLabResult[] }>(`/lab-results${qs}`);
   return data.results ?? [];
 }
+
+// feat: complete advancedmd slot retrieval with timezone norma

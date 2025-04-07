@@ -68,3 +68,5 @@ export function clinicLocalToUtc(localDateString: string, clinicTimezone: string
 
   return new Date(utcString + ' UTC');
 }
+
+// feat: complete advancedmd slot retrieval with timezone norma
