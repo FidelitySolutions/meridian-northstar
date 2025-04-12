@@ -6,3 +6,5 @@ export {};
 // feat: begin advancedmd slot retrieval service parsing clinic
 
 // feat: complete advancedmd slot retrieval with timezone norma
+
+// feat: implement post /api/scheduling/book with amd slot avai
