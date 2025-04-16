@@ -8,3 +8,5 @@ export {};
 // feat: complete advancedmd slot retrieval with timezone norma
 
 // feat: implement post /api/scheduling/book with amd slot avai
+
+// feat: implement get /api/scheduling/appointments returning u
