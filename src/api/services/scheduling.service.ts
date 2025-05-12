@@ -12,3 +12,5 @@ export {};
 // feat: implement get /api/scheduling/appointments returning u
 
 // feat: implement appointment cancellation and reschedule endp
+
+// feat: complete appointment confirmation email dispatched asy
