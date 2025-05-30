@@ -4,3 +4,5 @@
 export {};
 
 // feat: implement message read receipts setting read-at in sam
+
+// refactor: wrap decrypt call in message retrieval path to pre

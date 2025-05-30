@@ -95,3 +95,5 @@ export async function decrypt(payload: EncryptedPayload): Promise<string> {
 }
 
 // feat: complete messaging thread list create send and retriev
+
+// refactor: wrap decrypt call in message retrieval path to pre
