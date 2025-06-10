@@ -129,3 +129,5 @@ export async function sendProviderReplyNotification(patientId: string, threadSub
 
   await send(patient.email, `New message reply: ${threadSubject} — MyNorthstar`, html);
 }
+
+// feat: implement patient notification email on provider reply

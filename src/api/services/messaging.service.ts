@@ -8,3 +8,5 @@ export {};
 // refactor: wrap decrypt call in message retrieval path to pre
 
 // feat: implement messaging admin reply stub endpoint gated be
+
+// feat: implement patient notification email on provider reply
