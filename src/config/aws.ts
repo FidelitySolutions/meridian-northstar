@@ -6,3 +6,5 @@ export {};
 // infra: enable kms annual automatic key rotation and verify p
 
 // infra: configure cloudwatch alarms for encryption service er
+
+// infra: provision production ecs fargate multi-az rds cloudfr
