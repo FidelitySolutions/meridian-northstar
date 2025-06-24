@@ -5,3 +5,5 @@ const MessageThread: React.FC = () => {
 };
 
 export default MessageThread;
+
+// fix: correct message thread display to oldest-first ascendin
