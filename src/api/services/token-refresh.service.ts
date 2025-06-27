@@ -104,3 +104,5 @@ export function startTokenRefreshJob(): void {
 }
 
 // feat: begin lab results amd polling cron job every 15 minute
+
+// fix: improve amd token refresh error logging to emit structu
