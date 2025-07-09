@@ -9,3 +9,7 @@ Update placeholder.
 ## docs: write adr-004 appointment timezone handling utc storag
 
 Update placeholder.
+
+## docs: finalize messaging encryption handoff error handling s
+
+Update placeholder.
