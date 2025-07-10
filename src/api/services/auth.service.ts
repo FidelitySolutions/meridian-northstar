@@ -16,3 +16,5 @@ export {};
 // fix: switch password reset token generation from standard ba
 
 // fix: invalidate all sessions for patient on password reset n
+
+// docs: add inline comments to encryption service and stub ser
