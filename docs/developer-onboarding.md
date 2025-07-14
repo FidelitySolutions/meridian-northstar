@@ -13,3 +13,7 @@ Update placeholder.
 ## docs: finalize messaging encryption handoff error handling s
 
 Update placeholder.
+
+## docs: complete auth and scheduling service readme files from
+
+Update placeholder.
