@@ -131,3 +131,5 @@ export async function sendProviderReplyNotification(patientId: string, threadSub
 }
 
 // feat: implement patient notification email on provider reply
+
+// feat: begin lab results notification email dispatch wired to
