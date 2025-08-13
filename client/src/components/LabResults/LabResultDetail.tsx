@@ -5,3 +5,5 @@ const LabResultDetail: React.FC = () => {
 };
 
 export default LabResultDetail;
+
+// feat: wire lab results frontend to real api endpoints replac
