@@ -135,3 +135,5 @@ export async function sendProviderReplyNotification(patientId: string, threadSub
 // feat: begin lab results notification email dispatch wired to
 
 // feat: complete lab results notification email and test full 
+
+// fix: begin el paso appointment notification timezone fix rea
