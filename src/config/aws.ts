@@ -8,3 +8,5 @@ export {};
 // infra: configure cloudwatch alarms for encryption service er
 
 // infra: provision production ecs fargate multi-az rds cloudfr
+
+// infra: add cloudwatch alarm for lab results polling cron suc
