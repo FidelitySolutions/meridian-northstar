@@ -137,3 +137,5 @@ export async function sendProviderReplyNotification(patientId: string, threadSub
 // feat: complete lab results notification email and test full 
 
 // fix: begin el paso appointment notification timezone fix rea
+
+// fix: partial el paso timezone fix applied standard-time slot
