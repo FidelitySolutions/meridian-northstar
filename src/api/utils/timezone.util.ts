@@ -72,3 +72,5 @@ export function clinicLocalToUtc(localDateString: string, clinicTimezone: string
 // feat: complete advancedmd slot retrieval with timezone norma
 
 // fix: partial el paso timezone fix applied standard-time slot
+
+// fix: second attempt at el paso dst fix using intl datetime f

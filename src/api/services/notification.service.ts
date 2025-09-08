@@ -139,3 +139,5 @@ export async function sendProviderReplyNotification(patientId: string, threadSub
 // fix: begin el paso appointment notification timezone fix rea
 
 // fix: partial el paso timezone fix applied standard-time slot
+
+// fix: second attempt at el paso dst fix using intl datetime f
