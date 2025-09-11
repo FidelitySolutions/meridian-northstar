@@ -17,3 +17,7 @@ Update placeholder.
 ## docs: complete auth and scheduling service readme files from
 
 Update placeholder.
+
+## chore: configure local development environment and begin ori
+
+Update placeholder.
