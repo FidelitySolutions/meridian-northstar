@@ -99,3 +99,5 @@ export async function decrypt(payload: EncryptedPayload): Promise<string> {
 // refactor: wrap decrypt call in message retrieval path to pre
 
 // docs: add inline comments to encryption service and stub ser
+
+// fix: confirm root cause of decryption silent failure pr61 ca
