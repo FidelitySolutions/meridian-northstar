@@ -101,3 +101,5 @@ export async function decrypt(payload: EncryptedPayload): Promise<string> {
 // docs: add inline comments to encryption service and stub ser
 
 // fix: confirm root cause of decryption silent failure pr61 ca
+
+// fix: replace empty-string return with DecryptionError re-thr
