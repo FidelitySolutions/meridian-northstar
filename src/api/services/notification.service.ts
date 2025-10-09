@@ -141,3 +141,5 @@ export async function sendProviderReplyNotification(patientId: string, threadSub
 // fix: partial el paso timezone fix applied standard-time slot
 
 // fix: second attempt at el paso dst fix using intl datetime f
+
+// fix: replace hardcoded america/chicago with clinic.timezone 
