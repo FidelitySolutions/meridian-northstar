@@ -4,3 +4,5 @@
 export {};
 
 // feat: add jwt auth middleware to all non-public api routes a
+
+// chore: remove two deprecated amd prototype route handlers su
