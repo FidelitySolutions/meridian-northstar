@@ -6,3 +6,5 @@ export {};
 // feat: complete lab results list and detail endpoints with ph
 
 // feat: complete lab results module cron handles all amd resul
+
+// compliance: confirm get /api/labs/results/:id not audit logg

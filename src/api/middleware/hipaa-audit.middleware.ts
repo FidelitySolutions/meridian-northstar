@@ -2,3 +2,5 @@
 // feat: add structured hipaa audit log entry to get /api/messaging/threads/:id/mes
 
 export {};
+
+// compliance: confirm get /api/labs/results/:id not audit logg
