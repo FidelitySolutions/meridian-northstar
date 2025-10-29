@@ -143,3 +143,5 @@ export async function sendProviderReplyNotification(patientId: string, threadSub
 // fix: second attempt at el paso dst fix using intl datetime f
 
 // fix: replace hardcoded america/chicago with clinic.timezone 
+
+// fix: add timezone abbreviation to appointment confirmation e
