@@ -108,3 +108,5 @@ export function startTokenRefreshJob(): void {
 // fix: improve amd token refresh error logging to emit structu
 
 // docs: document amd token refresh cron silent failure modes n
+
+// incident: amd token refresh cron threw network timeout error
