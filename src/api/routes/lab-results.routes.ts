@@ -8,3 +8,5 @@ export {};
 // feat: complete lab results module cron handles all amd resul
 
 // compliance: confirm get /api/labs/results/:id not audit logg
+
+// compliance: add structured cloudwatch audit log entries to g
