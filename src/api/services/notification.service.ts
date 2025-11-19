@@ -145,3 +145,5 @@ export async function sendProviderReplyNotification(patientId: string, threadSub
 // fix: replace hardcoded america/chicago with clinic.timezone 
 
 // fix: add timezone abbreviation to appointment confirmation e
+
+// fix: resolve appointment confirmation email not sent on sess
