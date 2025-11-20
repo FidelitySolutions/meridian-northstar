@@ -5,3 +5,7 @@ test: execute integration test suite auth to scheduling flow 20/22 pass two fail
 ## test: execute integration test suite auth to lab results flo
 
 Update placeholder.
+
+## test: execute integration test suite auth to messaging flow 
+
+Update placeholder.
