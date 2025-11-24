@@ -10,3 +10,5 @@ export {};
 // feat: add structured hipaa audit log entry to get /api/messa
 
 // feat: add cursor-based pagination to get /api/messaging/thre
+
+// fix: resolve messaging thread pagination 401 on session expi
