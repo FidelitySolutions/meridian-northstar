@@ -12,3 +12,5 @@ export {};
 // feat: complete lab results notification email and test full 
 
 // feat: complete lab results module cron handles all amd resul
+
+// fix: add unique constraint on patient-id and amd-result-id t
