@@ -16,3 +16,5 @@ export {};
 // feat: complete appointment confirmation email dispatched asy
 
 // fix: resolve appointment confirmation email not sent on sess
+
+// feat: implement appointment cancellation confirmation email 

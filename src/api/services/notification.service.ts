@@ -147,3 +147,5 @@ export async function sendProviderReplyNotification(patientId: string, threadSub
 // fix: add timezone abbreviation to appointment confirmation e
 
 // fix: resolve appointment confirmation email not sent on sess
+
+// feat: implement appointment cancellation confirmation email 
