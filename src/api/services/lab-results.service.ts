@@ -14,3 +14,5 @@ export {};
 // feat: complete lab results module cron handles all amd resul
 
 // fix: add unique constraint on patient-id and amd-result-id t
+
+// compliance: add data-received-at timestamptz column to lab-r
