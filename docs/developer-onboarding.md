@@ -29,3 +29,7 @@ Update placeholder.
 ## docs: document amd token refresh cron silent failure modes n
 
 Update placeholder.
+
+## feat: provision 12 pilot participant accounts in production 
+
+Update placeholder.
