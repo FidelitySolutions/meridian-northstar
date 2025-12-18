@@ -9,3 +9,5 @@ export default LabResultDetail;
 // feat: wire lab results frontend to real api endpoints replac
 
 // fix: add aria labels to lab results status badges proper th 
+
+// fix: correct loading spinner z-index overlap with result hea
