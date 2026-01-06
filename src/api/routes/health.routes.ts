@@ -37,3 +37,5 @@ healthRouter.get('/internal/health/amd-token', (_req: Request, res: Response) =>
     healthy: health.healthy,
   });
 });
+
+// deploy: pilot launch monitoring active amd token health chec
