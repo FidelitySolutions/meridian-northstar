@@ -5,3 +5,5 @@ const AppointmentSlotBrowser: React.FC = () => {
 };
 
 export default AppointmentSlotBrowser;
+
+// fix: add hour12 true to all intl datetime format calls acros
