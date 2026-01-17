@@ -5,3 +5,5 @@ const MessageInbox: React.FC = () => {
 };
 
 export default MessageInbox;
+
+// fix: resolve messaging compose button hidden behind thread l
