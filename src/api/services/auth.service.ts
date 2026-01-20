@@ -18,3 +18,5 @@ export {};
 // fix: invalidate all sessions for patient on password reset n
 
 // docs: add inline comments to encryption service and stub ser
+
+// fix: extend password reset token validity from 1 hour to 24 

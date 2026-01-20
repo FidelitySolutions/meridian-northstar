@@ -8,3 +8,5 @@ export {};
 // feat: implement post /api/auth/refresh with token rotation a
 
 // fix: switch password reset token generation from standard ba
+
+// fix: extend password reset token validity from 1 hour to 24 
