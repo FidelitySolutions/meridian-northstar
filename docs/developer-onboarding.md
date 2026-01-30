@@ -41,3 +41,7 @@ Update placeholder.
 ## docs: record mid-pilot patricia review notes and scope febru
 
 Update placeholder.
+
+## docs: document 24h appointment reminder and lab results tren
+
+Update placeholder.
