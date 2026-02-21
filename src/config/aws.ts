@@ -14,3 +14,5 @@ export {};
 // feat: add /internal/health/amd-token endpoint 20-hour cloudw
 
 // feat: final december production deployment all modules verif
+
+// feat: transfer amd oauth credentials to northstar it via sec
